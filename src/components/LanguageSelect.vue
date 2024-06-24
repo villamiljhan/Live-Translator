@@ -1,24 +1,24 @@
 <script setup>
-import { computed, inject, ref } from 'vue';
-import { languages } from '@/assets/languages.json';
+import { computed, inject, ref } from "vue";
+import { languages } from "@/assets/languages.json";
 
-const recognition = inject('SpeechRecognition');
-const language = ref(localStorage.getItem('language') || 57);
+const recognition = inject("SpeechRecognition");
+const language = ref(localStorage.getItem("language") || 57);
 const languageSelect = computed({
   get() {
     region.value = regions.value[0][0];
     recognition.stop();
     recognition.lang = region.value;
-    localStorage.setItem('region', region.value);
+    localStorage.setItem("region", region.value);
     return language.value;
   },
   set(value) {
     language.value = value;
-    localStorage.setItem('language', value);
-  }
+    localStorage.setItem("language", value);
+  },
 });
 
-const region = ref(localStorage.getItem('region') || 'ja-JP');
+const region = ref(localStorage.getItem("region") || "ja-JP");
 const regions = computed(() => {
   return languages[language.value].regions;
 });
@@ -29,8 +29,8 @@ const regionSelect = computed({
   set(value) {
     recognition.stop();
     recognition.lang = value;
-    localStorage.setItem('region', value);
-  }
+    localStorage.setItem("region", value);
+  },
 });
 </script>
 

@@ -20,7 +20,7 @@ onMounted(() => {
     class="relative mx-auto pt-5 sm-only:pt-3 flex justify-center items-center gap-4 w-full max-w-[820px]"
   >
     <img :src="Icon" class="w-14 sm:w-16" alt="LiveTranslate icon">
-    <h1 class="font-bold text-3xl sm:text-4xl">LiveTranslate</h1>
+    <h1 class="font-bold text-3xl sm:text-4xl">Live Translate Software</h1>
     <label
       :class="{'swap-active':isLight}"
       class="absolute right-3 swap swap-rotate"

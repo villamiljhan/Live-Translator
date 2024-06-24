@@ -1,16 +1,16 @@
-<script setup>
-import { computed, inject, ref } from 'vue';
-import { translations } from '@/assets/translations.json';
+Transcript goes here<script setup>
+import { computed, inject, ref } from "vue";
+import { translations } from "@/assets/translations.json";
 
-const transcript = inject('transcript');
+const transcript = inject("transcript");
 const translate = computed({
   get() {
     return transcript.translateTo;
   },
   set(value) {
     transcript.translateTo = value;
-    localStorage.setItem('translateTo', value);
-  }
+    localStorage.setItem("translateTo", value);
+  },
 });
 </script>
 
@@ -19,10 +19,7 @@ const translate = computed({
     <label class="label">
       <span class="label-text sm-only:text-xs">Translate to</span>
     </label>
-    <select
-      v-model="translate"
-      class="select select-sm select-primary sm-only:text-xs"
-    >
+    <select v-model="translate" class="select select-sm select-primary sm-only:text-xs">
       <option v-for="language in translations" :value="language.code">
         {{ language.name }}
       </option>
